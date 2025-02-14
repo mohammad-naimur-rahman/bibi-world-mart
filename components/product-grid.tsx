@@ -1,5 +1,12 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel'
 import { products } from '@/data/products'
 
 // Mock product data
@@ -12,18 +19,37 @@ export default function ProductGrid() {
         {products.map(product => (
           <Card key={product.id}>
             <CardContent className='p-4'>
-              <img
-                src={product.image || '/placeholder.svg'}
-                alt={product.name}
-                className='w-full h-64 object-cover mb-4'
-              />
-              <h3 className='text-lg font-semibold'>{product.name}</h3>
-              <p className='text-sm text-gray-600'>
-                ${product.price.toFixed(2)}
-              </p>
+              <Carousel>
+                <CarouselContent>
+                  {product.images.map(img => (
+                    <CarouselItem key={img}>
+                      <img
+                        src={img}
+                        alt={product.name}
+                        className='aspect-[1/2] object-cover'
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className='ml-14' />
+                <CarouselNext className='mr-14' />
+              </Carousel>
+
+              <h3 className='text-lg font-semibold py-1 mt-3'>
+                {product.name}
+              </h3>
+              <p className='text-gray-600 font-medium'>{product.price}</p>
             </CardContent>
             <CardFooter>
-              <Button className='w-full'>Add to Cart</Button>
+              <a
+                href='https://wa.me/+8801862266698'
+                target='_blank'
+                className='w-full'
+              >
+                <Button className='w-full' variant='yellow'>
+                  Buy Now
+                </Button>
+              </a>
             </CardFooter>
           </Card>
         ))}
