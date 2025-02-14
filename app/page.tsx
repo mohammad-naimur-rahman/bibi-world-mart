@@ -1,5 +1,6 @@
 import Header from '@/components/header'
 import Hero from '@/components/hero'
+import NewFooter from '@/components/new-footer'
 import ProductGrid from '@/components/product-grid'
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
         <Hero />
         <ProductGrid />
       </main>
+      <NewFooter />
     </div>
   )
 }
