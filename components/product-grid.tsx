@@ -38,7 +38,9 @@ export default function ProductGrid() {
               <h3 className='text-lg font-semibold py-1 mt-3'>
                 {product.name}
               </h3>
-              <p className='text-gray-600 font-medium'>{product.price}</p>
+              <p className='text-gray-600 font-medium'>
+                মূল্যঃ {product.price}
+              </p>
             </CardContent>
             <CardFooter>
               <a

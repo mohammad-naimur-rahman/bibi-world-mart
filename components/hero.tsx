@@ -20,7 +20,7 @@ export default function Hero() {
           timeless designs perfect for any occasion.
         </p>
         <a href='#shop'>
-          <Button size='lg' className='bg-[#f59e0b] hover:bg-[#d97706]'>
+          <Button size='lg' variant='yellow'>
             Shop Now
           </Button>
         </a>
